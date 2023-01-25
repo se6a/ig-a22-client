@@ -30,7 +30,6 @@
 
 <style>
     .layout._site {
-        border: 2px solid red;
         min-height: 100%;
         display: flex;
         flex-direction: column;
