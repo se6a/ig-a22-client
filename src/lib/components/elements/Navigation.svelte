@@ -2,28 +2,7 @@
     import Item from "$components/elements/NavigationItem.svelte";
     import IconMenu from "$components/icons/IconMenu.svelte";
 
-    const navigation = [
-        {
-            pageTitle: "Blog",
-            route: "",
-            subItems: []
-        },
-        {
-            pageTitle: "Argumente",
-            route: "",
-            subItems: []
-        },
-        {
-            pageTitle: "Über uns",
-            route: "",
-            subItems: []
-        },
-        {
-            pageTitle: "Kontakt",
-            route: "",
-            subItems: []
-        }
-    ];
+    export let navigation = [];
 
     $: showMobile = false;
 </script>

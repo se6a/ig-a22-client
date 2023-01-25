@@ -1,14 +1,17 @@
 <script>
     import Logo from "$components/fragments/Logo.svelte";
     import Navigation from "$components/elements/Navigation.svelte";
+
+    export let data = {};
+    const [start, ...navigation] = data?.navigation || [];
 </script>
 
 <header class="HEADER ">
     <div class="box useBg-fullwidth">
-        <div class="logo">
+        <a href="/" class="logo">
             <Logo />
-        </div>
-        <Navigation />
+        </a>
+        <Navigation {navigation} />
     </div>
 </header>
 

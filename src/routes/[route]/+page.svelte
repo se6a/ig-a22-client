@@ -2,8 +2,6 @@
     import Sections from "$components/layout/Sections.svelte";
     export let data = {};
 
-    console.log("now", data);
-
     const pageData = data?.pageData || {};
     const sections = pageData?.sections || [];
 </script>

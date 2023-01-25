@@ -5,8 +5,8 @@
 
     const inputId = createId();
     const pageTitle = item.pageTitle || "No Name";
-    const route = item.route || "";
-    const subItems = item.subItems;
+    const route = item.slug || "";
+    const subItems = []; //item.subItems;
 
     let showMobile = true;
 </script>

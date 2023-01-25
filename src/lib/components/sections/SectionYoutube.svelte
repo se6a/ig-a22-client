@@ -1,6 +1,9 @@
 <script>
     import Youtube from "../elements/Youtube.svelte";
-    export let ytVideoId = "7TrL8A25Qv8";
+
+    export let section = {};
+    const url = section?.url || "";
+    const ytVideoId = url.match(/(?:vi?(?:=|\/)|embed\/|youtu\.be\/)([a-zA-Z0-9_-]+)/)?.[1] || "";
 </script>
 
 <div class="SECTION-YOUTUBE box">

@@ -9,6 +9,8 @@
     import Header from "$components/layout/Header.svelte";
     import Footer from "$components/layout/Footer.svelte";
     import Main from "$components/layout/Main.svelte";
+
+    export let data = {};
 </script>
 
 <svelte:head>
@@ -18,13 +20,13 @@
 
 <div class="layout _site">
     <div class="layout _main">
-        <Header />
+        <Header {data} />
         <Main>
             <slot />
         </Main>
     </div>
     <div class="layout _footer">
-        <Footer />
+        <Footer {data} />
     </div>
 </div>
 

@@ -1,8 +1,10 @@
 <script>
-    export let src = "";
-    export let alt = "";
+    export let image = {};
     export let objectPosition = "50% 50%";
     export let objectFit = "contain";
+
+    const src = image?.src || "";
+    const alt = image?.alt || "";
 </script>
 
 <figure class="IMAGE">

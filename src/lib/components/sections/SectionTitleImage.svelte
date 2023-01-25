@@ -1,9 +1,14 @@
 <script>
-    import Image from "$components/elements/Image.svelte";
+    import Image from "../elements/Image.svelte";
+
+    export let section = {};
+
+    const image = section?.image || {};
+    const src = image?.src || "";
 </script>
 
 <div class="TITLE-IMAGE">
-    <Image src="/images/libelle.jpg" objectFit="cover" objectPosition="50% 65%" />
+    <Image {image} objectFit="cover" objectPosition="50% 65%" />
 </div>
 
 <style>

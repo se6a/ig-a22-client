@@ -1,3 +1,7 @@
+<script>
+    export let data = {};
+</script>
+
 <footer class="FOOTER box">
     <nav class="footerNav">
         <a class="navItem" href="">Blog</a>
