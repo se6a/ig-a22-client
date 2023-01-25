@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import Sections from "$components/layout/Sections.svelte";
+    import TitleImage from "$components/sections/TitleImage.svelte";
+    import Text from "$components/sections/Text.svelte";
+</script>
+
+<Sections>
+    <TitleImage />
+    <Text />
+</Sections>

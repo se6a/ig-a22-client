@@ -1,0 +1,90 @@
+@import "./breakpoints.css";
+
+/*  SPACE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+:root {
+    --space: var(--font-size-m);
+    --space-quarter: calc(var(--space) * 0.25);
+    --space-third: calc(var(--space) * 0.33);
+    --space-half: calc(var(--space) * 0.5);
+    --space-1: calc(var(--space) * 1);
+    --space-2: calc(var(--space) * 2);
+    --space-3: calc(var(--space) * 3);
+    --space-4: calc(var(--space) * 4);
+
+    --space-xs: 1rem;
+    --space-s: 1rem;
+    --space-m: 2rem;
+    --space-l: 5rem;
+    --space-xl: 1rem;
+}
+
+/*  FONT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+:root {
+    --font-size-xs: 1rem;
+    --font-size-s: 1.2rem;
+    --font-size-m: 1.6rem;
+    --font-size-l: 3.6rem;
+    --font-size-xl: 5rem;
+    --font-size-xxl: 10rem;
+}
+
+/*  PAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*  LAYOUT
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+:root {
+    --page-maxWidth: 1200px;
+
+    --footer-height: 120px;
+
+    --header-height: 160px;
+
+    --titleImage-height: 400px;
+
+    --box-padding: var(--space-m);
+
+    --content-wide-maxWidth: var(--page-maxWidth);
+    --content-maxWidth: 800px;
+}
+/*  ELEMENTS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+:root {
+    --logo-height: 98px;
+}
+
+/*  COLUMNS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*  TYPO
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*  COLORS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+:root {
+    --blue: #40728d;
+    --blueLight: #8dc2c7;
+    --green: #487378;
+    --red: #c83264;
+}
+
+/*  TIME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+:root {
+    --duration-slow: 600ms;
+    --duration-middle: 300ms;
+    --duration-fast: 100ms;
+}
+
+/* Z-INDEX
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+:root {
+    --zPos-front: 100;
+    --zPos-midFront: 75;
+    --zPos-center: 50;
+    --zPos-midBack: 25;
+    --zPos-back: 0;
+    --zPos-negative: -1;
+}

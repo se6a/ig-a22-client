@@ -1,0 +1,42 @@
+@import "./breakpoints.css";
+
+/* TYPO
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+:root {
+    font-family: "Shape", sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.03em;
+}
+
+body {
+    font-size: var(--font-size-m);
+}
+
+/* HEADINGS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+h1,
+h2 {
+    font-size: var(--font-size-l);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-weight: 600;
+    color: var(--green);
+}
+
+h2 {
+    font-weight: 300;
+}
+
+/* ELEMENTS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.box {
+    padding: var(--box-padding);
+}

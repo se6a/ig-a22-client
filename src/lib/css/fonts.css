@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Shape";
+    font-weight: 300;
+    src: url("/fonts/Shape-Light.woff2") format("woff2"),
+        url("fonts/Shape-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Shape";
+    font-weight: 400;
+    src: url("/fonts/Shape-Regular.woff2") format("woff2"),
+        url("fonts/Shape-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Shape";
+    font-weight: 700;
+    src: url("/fonts/Shape-Bold.woff2") format("woff2"), url("fonts/Shape-Bold.woff") format("woff");
+}
