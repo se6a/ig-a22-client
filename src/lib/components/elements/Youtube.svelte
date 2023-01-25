@@ -13,3 +13,9 @@
         allowfullscreen
     />
 </article>
+
+<style>
+    iframe {
+        max-width: 100%;
+    }
+</style>

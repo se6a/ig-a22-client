@@ -3,7 +3,7 @@
     export let ytVideoId = "7TrL8A25Qv8";
 </script>
 
-<div class="SECTION-YOUTUBE">
+<div class="SECTION-YOUTUBE box">
     <div class="videoWrapper">
         <Youtube {ytVideoId} />
     </div>
