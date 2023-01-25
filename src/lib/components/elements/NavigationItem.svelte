@@ -174,7 +174,9 @@
             position: relative;
             text-align: center;
             padding: 1rem 0;
-            border-top: 1px solid white;
+            font-size: var(--font-size-l);
+            font-weight: 600;
+            color: var(--green);
         }
 
         .NAV-ITEM.isCurrent .label {

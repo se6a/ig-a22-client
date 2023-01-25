@@ -43,13 +43,13 @@
 <style>
     .SECTION-GALLERY-SLIDE {
         position: relative;
-        max-width: var(--content-maxWidth);
         margin-right: auto;
         margin-left: auto;
         --galleryButton-size: 3rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        max-width: calc(var(--content-maxWidth) + var(--galleryButton-size) * 2);
     }
 
     /*  NAVIGATION
@@ -81,11 +81,11 @@
     }
 
     .button.prev {
-        left: calc((var(--galleryButton-size) + var(--space-m)) * -1);
+        left: var(--space-m);
     }
 
     .button.next {
-        right: calc((var(--galleryButton-size) + var(--space-m)) * -1);
+        right: var(--space-m);
     }
 
     .button.prev::after {
@@ -112,8 +112,10 @@
 
     .images {
         height: 60vh;
+        width: calc(100% - var(--galleryButton-size) * 2);
         overflow: hidden;
         position: relative;
+        margin: auto;
     }
 
     .imageWrapper {

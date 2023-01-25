@@ -27,6 +27,7 @@
         width: 100%;
         right: 0;
         left: 0;
+        height: var(--header-height);
         margin: auto;
         max-width: var(--page-maxWidth);
     }

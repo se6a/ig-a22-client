@@ -90,11 +90,11 @@
         }
 
         .label.forMenu.ifMobile {
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 3rem;
+            height: 3rem;
             display: block;
-            --icon-strokeWidth: 2px;
-            --icon-color: var(--color-front);
+            --icon-strokeWidth: 1.5px;
+            --icon-color: black;
         }
 
         .items {
@@ -102,20 +102,19 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-
+            justify-content: center;
+            padding-bottom: 40%;
             position: fixed;
-            top: var(--header-height);
+            top: calc(var(--header-height) - var(--space-m));
             left: 0;
             right: 0;
             bottom: 0;
-            padding: var(--space-main);
             visibility: hidden;
             pointer-events: none;
             user-select: none;
             opacity: 0;
             transition: opacity var(--duration-middle), visibility 1ms var(--duration-middle);
-            color: var(--color-front);
-            background-color: var(--color-back);
+            background-color: white;
         }
 
         /* interactivity
@@ -125,15 +124,6 @@
             pointer-events: all;
             opacity: 1;
             transition: opacity var(--duration-middle), visibility 0ms;
-        }
-
-        /* Colors
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-        .items {
-            --color-front: white;
-            --color-front-isFocus: var(--color-orange);
-            --color-front-isCurrent: var(--color-orange);
-            --color-back: var(--color-green);
         }
     }
 </style>

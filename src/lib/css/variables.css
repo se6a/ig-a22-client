@@ -36,7 +36,7 @@
 @media (--vw-s) {
     :root {
         --space-s: 1rem;
-        --space-m: 1rem;
+        --space-m: 1.5rem;
         --space-l: 3rem;
     }
 }
@@ -71,10 +71,22 @@
     --content-wide-maxWidth: var(--page-maxWidth);
     --content-maxWidth: 800px;
 }
+
+@media (--vw-m) {
+    :root {
+        --header-height: 90px;
+    }
+}
 /*  ELEMENTS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 :root {
     --logo-height: 98px;
+}
+
+@media (--vw-m) {
+    :root {
+        --logo-height: 60px;
+    }
 }
 
 /*  COLUMNS

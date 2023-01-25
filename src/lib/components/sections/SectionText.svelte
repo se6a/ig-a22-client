@@ -3,10 +3,10 @@
 
     <h2>Die Situation ist untragbar!</h2>
     <ul>
-        <li>– Die Ergolz ist zubetoniert.</li>
-        <li>– Der Lärm ist unerträglich.</li>
-        <li>– Die Brücke ist dringend sanieru ngsbedürftig.</li>
-        <li>– Die Strasse ist gefährlich.</li>
+        <li>Die Ergolz ist zubetoniert.</li>
+        <li>Der Lärm ist unerträglich.</li>
+        <li>Die Brücke ist dringend sanieru ngsbedürftig.</li>
+        <li>Die Strasse ist gefährlich.</li>
     </ul>
     <p>
         Die Umfahrung von Liestal und Lausen (A22) durchschneidet die Siedlungsgebiete der beiden
@@ -58,5 +58,27 @@
 
     .SECTION-TEXT > h1 + h2 {
         margin-top: 0;
+    }
+
+    /* STYLES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    ul {
+        padding-left: 1em;
+    }
+
+    ul > li {
+        position: relative;
+    }
+
+    ul > li::before {
+        position: absolute;
+        left: -1em;
+        display: inline-block;
+        content: "–";
+    }
+
+    strong {
+        font-weight: 600;
     }
 </style>
