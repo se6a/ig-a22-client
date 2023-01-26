@@ -2,11 +2,13 @@
     import {createId} from "$lib/functions/utility.ts";
 
     export let item = {};
+    export let subItems = [];
 
     const inputId = createId();
     const pageTitle = item.pageTitle || "No Name";
     const route = item.slug || "";
-    const subItems = []; //item.subItems;
+
+    console.log(subItems);
 
     let showMobile = true;
 </script>
@@ -30,12 +32,12 @@
         <div class="subItemGroup useColorPreset-1" style:--subItems={subItems.length}>
             <ul>
                 {#each subItems as subItem}
-                    {#if subItem?.slug && subItem?.navName}
+                    {#if subItem?.slug && subItem?.pageTitle}
                         <li class="subItem">
                             <a
                                 class="link"
                                 on:click={() => (showMobile = false)}
-                                href="{route}#{subItem.slug}">{subItem.navName}</a
+                                href="/{subItem.slug}">{subItem.pageTitle}</a
                             >
                         </li>
                     {/if}
@@ -62,10 +64,11 @@
             flex-direction: column;
             align-items: center;
             font-weight: 600;
+            isolation: isolate;
         }
 
         :global(.NAV-ITEM) + .NAV-ITEM {
-            margin-left: 1rem;
+            margin-left: 1em;
         }
 
         .link.forItem {
@@ -90,14 +93,15 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
         .subItemGroup {
-            --offset-y: 1.5rem;
-            top: 1rem;
-            color: var(--color-front);
+            --offset-y: 1.5em;
+            top: 1em;
+            background-color: white;
             position: absolute;
             visibility: hidden;
             opacity: 0;
             padding: calc(var(--space-quarter) + var(--offset-y)) var(--space-quarter)
                 var(--space-quarter) var(--space-quarter);
+            z-index: -1;
         }
 
         .subItem {
@@ -173,7 +177,7 @@
         .NAV-ITEM {
             position: relative;
             text-align: center;
-            padding: 1rem 0;
+            padding: 1em 0;
             font-size: var(--font-size-l);
             font-weight: 600;
             color: var(--green);
@@ -204,7 +208,7 @@
             display: inline-block;
             transition: transform var(--duration-middle);
             position: absolute;
-            margin-left: 1rem;
+            margin-left: 1em;
         }
 
         .subItemGroup {
@@ -212,7 +216,7 @@
             height: 0;
             overflow: hidden;
             transition: height var(--duration-middle);
-            --subItem-height: 2rem;
+            --subItem-height: 2em;
             --subItemGroup-height: calc(var(--subItems) * var(--subItem-height));
         }
 

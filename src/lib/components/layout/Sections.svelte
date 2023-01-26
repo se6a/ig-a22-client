@@ -10,8 +10,6 @@
 
     export let sections = [];
 
-    console.log(sections);
-
     const components = {
         SectionTitleImage,
         SectionRichtext,

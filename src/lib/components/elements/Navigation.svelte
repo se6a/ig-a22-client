@@ -2,7 +2,21 @@
     import Item from "$components/elements/NavigationItem.svelte";
     import IconMenu from "$components/icons/IconMenu.svelte";
 
-    export let navigation = [];
+    export let navigation = {};
+
+    const [_, ...main] = navigation?.main || [];
+    const sub = navigation?.sub || [];
+
+    const subOrdered = {};
+
+    sub.forEach((page) => {
+        if (page.parent in subOrdered === false) {
+            subOrdered[page.parent] = [];
+        }
+        subOrdered[page.parent].push(page);
+    });
+
+    console.log(subOrdered);
 
     $: showMobile = false;
 </script>
@@ -20,8 +34,8 @@
     </label>
 
     <ul class="items">
-        {#each navigation as item}
-            <Item {item} />
+        {#each main as item}
+            <Item {item} subItems={subOrdered?.[item.slug] || []} />
         {/each}
     </ul>
 </nav>

@@ -3,7 +3,7 @@
     import Navigation from "$components/elements/Navigation.svelte";
 
     export let data = {};
-    const [start, ...navigation] = data?.navigation || [];
+    const navigation = data?.navigation || {};
 </script>
 
 <header class="HEADER ">

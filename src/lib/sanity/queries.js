@@ -65,6 +65,14 @@ export const mainNavigation = `
 }
 `;
 
+export const subNavigation = `
+* [_type == "pages" && isSubpage == true ] {
+    "parent": parentPage->slug.current,
+    "slug": slug.current,
+    ${crntLang("pageTitle")},
+}
+`;
+
 export const page = `
     ${crntLang("pageTitle")},
     "slug": slug.current,
@@ -81,7 +89,10 @@ export const page = `
 // Get page defined as $route or - if not defined - startpage
 export const site = `
 {
-    "navigation": ${mainNavigation},
+    "navigation": {
+        "main": ${mainNavigation},
+        "sub": ${subNavigation}
+    },
 
     "pageData": * [_type == "pages" && slug.current == $route || _type == "settings" ][0] {
         _type == "pages" => {
@@ -92,6 +103,11 @@ export const site = `
                 ${page}
             }
         }
+    },
+
+    "subPages": * [_type == "pages" && isSubpage == true && parentPage->slug.current == $route] {
+        "slug": slug.current,
+        ${crntLang("pageTitle")},
     }
 }
 `;
