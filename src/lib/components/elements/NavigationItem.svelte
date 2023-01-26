@@ -8,8 +8,6 @@
     const pageTitle = item.pageTitle || "No Name";
     const route = item.slug || "";
 
-    console.log(subItems);
-
     let showMobile = true;
 </script>
 

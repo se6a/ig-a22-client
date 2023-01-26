@@ -9,8 +9,6 @@ export const sanity = sanityClient({
 });
 
 export async function fetchSite(route = "", lang = "de") {
-    console.log("route", route);
-
     try {
         return sanity.fetch(site, {route, lang});
     } catch (error) {

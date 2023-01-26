@@ -16,8 +16,6 @@
         subOrdered[page.parent].push(page);
     });
 
-    console.log(subOrdered);
-
     $: showMobile = false;
 </script>
 
