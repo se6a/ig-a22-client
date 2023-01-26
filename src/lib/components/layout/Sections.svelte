@@ -10,7 +10,7 @@
 
     export let sections = [];
 
-    const components = {
+    $: components = {
         SectionTitleImage,
         SectionRichtext,
         SectionImage,
