@@ -10,4 +10,9 @@
 </div>
 
 <style>
+    .SECTION-TEXT {
+        max-width: var(--content-maxWidth);
+        margin-left: auto;
+        margin-right: auto;
+    }
 </style>

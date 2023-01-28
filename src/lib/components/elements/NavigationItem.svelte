@@ -4,46 +4,48 @@
     export let item = {};
     export let subItems = [];
 
-    const inputId = createId();
-    const pageTitle = item.pageTitle || "No Name";
-    const route = item.slug || "";
+    export let showMobile = writable(false);
 
-    let showMobile = true;
+    const inputId = createId();
+    const pageTitle = item?.pageTitle || "";
+    const route = item?.slug || "";
 </script>
 
-<li class="NAV-ITEM" class:hasSubItems={subItems.length} class:isCurrent={false}>
-    <a class="link forItem" on:click={() => (showMobile = false)} href={route}>
-        {pageTitle}
-    </a>
+{#if pageTitle}
+    <li class="NAV-ITEM" class:hasSubItems={subItems.length} class:isCurrent={false}>
+        <a class="link forItem" on:click={() => ($showMobile = false)} href={route}>
+            {pageTitle}
+        </a>
 
-    <input
-        class="toggle forSubItems ifMobile"
-        type="checkbox"
-        name="mobileItemToggle"
-        id={inputId}
-    />
-    <label class="label forSubItems ifMobile" for={inputId}>
-        {pageTitle}
-    </label>
+        <input
+            class="toggle forSubItems ifMobile"
+            type="checkbox"
+            name="mobileItemToggle"
+            id={inputId}
+        />
+        <label class="label forSubItems ifMobile" for={inputId}>
+            {pageTitle}
+        </label>
 
-    {#if subItems.length}
-        <div class="subItemGroup useColorPreset-1" style:--subItems={subItems.length}>
-            <ul>
-                {#each subItems as subItem}
-                    {#if subItem?.slug && subItem?.pageTitle}
-                        <li class="subItem">
-                            <a
-                                class="link"
-                                on:click={() => (showMobile = false)}
-                                href="/{subItem.slug}">{subItem.pageTitle}</a
-                            >
-                        </li>
-                    {/if}
-                {/each}
-            </ul>
-        </div>
-    {/if}
-</li>
+        {#if subItems.length}
+            <div class="subItemGroup useColorPreset-1" style:--subItems={subItems.length}>
+                <ul>
+                    {#each subItems as subItem}
+                        {#if subItem?.slug && subItem?.pageTitle}
+                            <li class="subItem">
+                                <a
+                                    class="link"
+                                    on:click={() => (showMobile = false)}
+                                    href="/{subItem.slug}">{subItem.pageTitle}</a
+                                >
+                            </li>
+                        {/if}
+                    {/each}
+                </ul>
+            </div>
+        {/if}
+    </li>
+{/if}
 
 <style lang="postcss">
     @import "$lib/css/breakpoints.css";

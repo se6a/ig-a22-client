@@ -6,7 +6,7 @@
 :root {
     font-family: "Shape", sans-serif;
     font-weight: 500;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.4;
     letter-spacing: 0.03em;
 }
@@ -32,6 +32,11 @@ h1 {
 
 h2 {
     font-weight: 300;
+}
+
+h3 {
+    font-size: var(--font-size-m);
+    font-weight: 600;
 }
 
 /* ELEMENTS

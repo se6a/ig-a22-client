@@ -5,7 +5,7 @@
     const url = cta.url || "";
 </script>
 
-<button class="BLOCK-CTA box" href={url}>
+<a class="BLOCK-CTA box" href={url}>
     <div class="circle">
         <div class="label">
             {#each label as part}
@@ -14,7 +14,7 @@
         </div>
         <div class="pushHeight" />
     </div>
-</button>
+</a>
 
 <style>
     .BLOCK-CTA {

@@ -5,6 +5,7 @@
     import SectionGallery from "$components/sections/SectionGallery.svelte";
     import SectionYoutube from "$components/sections/SectionYoutube.svelte";
     import SectionCta from "$components/sections/SectionCta.svelte";
+    import SectionSpace from "$components/sections/SectionSpace.svelte";
 
     import {capitalize} from "$lib/functions/utility.ts";
 
@@ -16,7 +17,8 @@
         SectionImage,
         SectionGallery,
         SectionYoutube,
-        SectionCta
+        SectionCta,
+        SectionSpace
     };
 </script>
 
@@ -33,7 +35,12 @@
 </div>
 
 <style>
-    .SECTIONS > :global(* + *) {
-        margin-top: var(--space-l);
+    .SECTIONS {
+        display: flex;
+        flex-direction: column;
     }
+
+    /* .SECTIONS > :global(* + *) {
+        margin-top: var(--space-s);
+    } */
 </style>

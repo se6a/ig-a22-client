@@ -1,6 +1,7 @@
 <script>
     import Item from "$components/elements/NavigationItem.svelte";
     import IconMenu from "$components/icons/IconMenu.svelte";
+    import {writable} from "svelte/store";
 
     export let navigation = {};
 
@@ -16,24 +17,24 @@
         subOrdered[page.parent].push(page);
     });
 
-    $: showMobile = false;
+    const showMobile = writable(false);
 </script>
 
 <nav class="NAVIGATION">
     <input
         class="toggle forMenu ifMobile"
-        bind:checked={showMobile}
+        bind:checked={$showMobile}
         type="checkbox"
         name="mobileMenuToggle"
         id="s345sfsfw"
     />
     <label class="label forMenu ifMobile" for="s345sfsfw">
-        <IconMenu isOpen={showMobile} />
+        <IconMenu isOpen={$showMobile} />
     </label>
 
     <ul class="items">
         {#each main as item}
-            <Item {item} subItems={subOrdered?.[item.slug] || []} />
+            <Item {item} {showMobile} subItems={subOrdered?.[item?.slug] || []} />
         {/each}
     </ul>
 </nav>

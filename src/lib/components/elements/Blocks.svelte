@@ -23,15 +23,19 @@
     }
 
     .BLOCKS > :global(* + *) {
-        margin-top: var(--space-quarter);
+        margin-top: var(--space-1);
     }
 
     .BLOCKS > :global(* + h2) {
-        margin-top: var(--space-2);
+        margin-top: var(--space-4);
     }
 
     .BLOCKS > :global(h1 + h2) {
         margin-top: 0;
+    }
+
+    .BLOCKS > :global(h3) {
+        margin-top: var(--space-1);
     }
 
     /* STYLES
@@ -54,5 +58,15 @@
 
     .BLOCKS :global(strong) {
         font-weight: 600;
+    }
+
+    .BLOCKS :global(a) {
+        font-weight: 600;
+        text-decoration: underline;
+        color: var(--green);
+    }
+
+    .BLOCKS :global(p) {
+        min-height: 1em;
     }
 </style>

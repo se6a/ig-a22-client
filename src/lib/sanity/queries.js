@@ -7,8 +7,10 @@ export const image = `
         "src": url,
         "width": metadata.dimensions.width,
         "height": metadata.dimensions.height,
-        "aspectRatio": metadata.dimensions.aspectRatio
+        "aspectRatio": metadata.dimensions.aspectRatio,
     },
+    alt,
+    caption,
     hotspot
 `;
 
@@ -23,7 +25,7 @@ export const sectionGallery = `
 export const sectionImage = `
     _type == "sectionImage" => {
         _type,
-        "image": image {${image}}
+        "image": image {${image}},
     }
 `;
 
@@ -58,6 +60,13 @@ export const sectionYoutube = `
     }
 `;
 
+export const sectionSpace = `
+    _type == "sectionSpace" => {
+        _type,
+        size
+    }
+`;
+
 export const mainNavigation = `
 * [_type == "settings"][0].navigationMain[]->{
     ${crntLang("pageTitle")},
@@ -82,7 +91,8 @@ export const page = `
         ${sectionTitleImage},
         ${sectionGallery},
         ${sectionYoutube},
-        ${sectionCta}
+        ${sectionCta},
+        ${sectionSpace}
     }
 `;
 

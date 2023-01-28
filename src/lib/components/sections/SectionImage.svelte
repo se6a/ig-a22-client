@@ -4,7 +4,6 @@
     export let section = {};
 
     const image = section?.image || {};
-    const src = image?.src || "";
 </script>
 
 <div class="SECTION-IMAGE box">
@@ -15,6 +14,7 @@
     .SECTION-IMAGE {
         position: relative;
         max-width: var(--content-maxWidth);
+        width: 100%;
         margin-right: auto;
         margin-left: auto;
     }
