@@ -25,6 +25,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .IMAGE * {
+        height: inherit;
+        width: inherit;
     }
 
     figcaption {
@@ -33,7 +40,6 @@
     }
 
     img {
-        width: 100%;
         max-height: 70vh;
         object-position: var(--objectPosition);
         object-fit: var(--objectFit);

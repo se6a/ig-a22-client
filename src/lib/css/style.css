@@ -45,3 +45,22 @@ h3 {
 .box {
     padding: var(--box-padding);
 }
+
+.section {
+    max-width: var(--content-maxWidth);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: var(--box-padding);
+}
+
+.section.isFullwidth {
+    max-width: var(--content-wide-maxWidth);
+}
+
+.textLink {
+    font-weight: 600;
+    text-decoration: underline;
+    color: var(--green);
+}

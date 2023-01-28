@@ -5,14 +5,9 @@
     const blocks = section?.blocks || [];
 </script>
 
-<div class="SECTION-TEXT box">
+<div class="SECTION-TEXT section">
     <Blocks {blocks} />
 </div>
 
 <style>
-    .SECTION-TEXT {
-        max-width: var(--content-maxWidth);
-        margin-left: auto;
-        margin-right: auto;
-    }
 </style>

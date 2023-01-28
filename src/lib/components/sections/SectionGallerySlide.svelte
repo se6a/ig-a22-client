@@ -10,7 +10,7 @@
     $: if (crntImageIndx < 0) crntImageIndx = images.length - 1;
 </script>
 
-<div class="SECTION-GALLERY-SLIDE box" class:hasNavigation={images.length > 1}>
+<div class="SECTION-GALLERY-SLIDE section" class:hasNavigation={images.length > 1}>
     <button class="button prev" aria-label="Zeige letztes Bild" on:click={() => crntImageIndx--} />
 
     <div class="images">
@@ -36,9 +36,6 @@
 
 <style>
     .SECTION-GALLERY-SLIDE {
-        position: relative;
-        margin-right: auto;
-        margin-left: auto;
         --galleryButton-size: 3rem;
         display: flex;
         flex-direction: column;

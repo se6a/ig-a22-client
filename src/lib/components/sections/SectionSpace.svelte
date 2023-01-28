@@ -4,7 +4,7 @@
     const size = section?.size || "";
 </script>
 
-<div class="SECTION-SPACE isSize-{size}" />
+<div class="SECTION-SPACE section isSize-{size}" />
 
 <style>
     .SECTION-SPACE {

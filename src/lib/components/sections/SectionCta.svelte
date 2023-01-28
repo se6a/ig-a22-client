@@ -6,6 +6,6 @@
     const cta = section?.cta || {};
 </script>
 
-<div class="SECTION-CTA">
+<div class="SECTION-CTA section">
     <Cta {cta} />
 </div>

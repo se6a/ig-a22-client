@@ -6,6 +6,7 @@
     import SectionYoutube from "$components/sections/SectionYoutube.svelte";
     import SectionCta from "$components/sections/SectionCta.svelte";
     import SectionSpace from "$components/sections/SectionSpace.svelte";
+    import SectionPdfList from "$components/sections/SectionPdfList.svelte";
 
     import {capitalize} from "$lib/functions/utility.ts";
 
@@ -18,7 +19,8 @@
         SectionGallery,
         SectionYoutube,
         SectionCta,
-        SectionSpace
+        SectionSpace,
+        SectionPdfList
     };
 </script>
 

@@ -14,9 +14,16 @@ export const image = `
     hotspot
 `;
 
+export const pdf = `
+    ...asset->{
+        url,
+        originalFilename
+    },
+    title
+`;
+
 export const sectionGallery = `
     _type == "sectionGallery" => {
-        _type,
         type,
         images[] {${image}}
     }
@@ -24,21 +31,18 @@ export const sectionGallery = `
 
 export const sectionImage = `
     _type == "sectionImage" => {
-        _type,
         "image": image {${image}},
     }
 `;
 
 export const sectionTitleImage = `
     _type == "sectionTitleImage" => {
-        _type,
         "image": image {${image}}
     }
 `;
 
 export const sectionCta = `
     _type == "sectionCta" => {
-        _type,
         "cta": {
             label,
             url
@@ -48,22 +52,28 @@ export const sectionCta = `
 
 export const sectionRichtext = `
     _type == "sectionRichtext" => {
-        _type,
-        "blocks": textEditor[$lang]
+        "blocks": textEditor[$lang][] {
+            ...,
+            _type == "pdf" => {${pdf}}
+        }
     }
 `;
 
 export const sectionYoutube = `
     _type == "sectionYoutube" => {
-        _type,
         "url": videoUrl
     }
 `;
 
 export const sectionSpace = `
     _type == "sectionSpace" => {
-        _type,
         size
+    }
+`;
+
+export const sectionPdfList = `
+    _type=="sectionPdfList" => {
+        list[] {${pdf}}
     }
 `;
 
@@ -86,13 +96,15 @@ export const page = `
     ${crntLang("pageTitle")},
     "slug": slug.current,
     sections[] {
+        _type,
         ${sectionRichtext},
         ${sectionImage},
         ${sectionTitleImage},
         ${sectionGallery},
         ${sectionYoutube},
         ${sectionCta},
-        ${sectionSpace}
+        ${sectionSpace},
+        ${sectionPdfList}
     }
 `;
 

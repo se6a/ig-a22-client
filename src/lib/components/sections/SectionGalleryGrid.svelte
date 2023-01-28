@@ -6,7 +6,7 @@
     const images = section.images || [];
 </script>
 
-<div class="SECTION-GALLERY-GRID box" class:hasNavigation={images.length > 1}>
+<div class="SECTION-GALLERY-GRID section isFullwidth" class:hasNavigation={images.length > 1}>
     <div class="images">
         {#each images as image}
             <div class="imageWrapper _outer">
@@ -21,10 +21,6 @@
 
 <style>
     .SECTION-GALLERY-GRID {
-        position: relative;
-        max-width: var(--content-wide-maxWidth);
-        margin-right: auto;
-        margin-left: auto;
         --widthHeightRatio: 0.75;
     }
 

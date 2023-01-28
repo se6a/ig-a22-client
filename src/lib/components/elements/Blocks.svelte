@@ -1,12 +1,14 @@
 <script>
     import {PortableText} from "@portabletext/svelte";
     import cta from "$components/elements/BlockCta.svelte";
+    import pdf from "$components/elements/BlockPdfLink.svelte";
 
     export let blocks = [];
 
     const components = {
         types: {
-            cta
+            cta,
+            pdf
         }
     };
 </script>

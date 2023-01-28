@@ -4,10 +4,9 @@
     export let section = {};
 
     const image = section?.image || {};
-    const src = image?.src || "";
 </script>
 
-<div class="TITLE-IMAGE">
+<div class="TITLE-IMAGE section isFullwidth">
     <Image {image} objectFit="cover" objectPosition="50% 65%" />
 </div>
 
@@ -15,5 +14,9 @@
     .TITLE-IMAGE {
         height: var(--titleImage-height);
         position: relative;
+        padding-right: 0;
+        padding-left: 0;
+        padding-top: 0;
+        max-width: unset;
     }
 </style>
