@@ -3,7 +3,7 @@ import {mainNavigation, site} from "./queries";
 
 export const sanity = sanityClient({
     projectId: "w2pmk8ct",
-    dataset: "development",
+    dataset: "production",
     apiVersion: "2021-10-21",
     useCdn: true
 });
