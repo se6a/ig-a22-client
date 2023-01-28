@@ -16,6 +16,8 @@
 </header>
 
 <style>
+    @import "$lib/css/breakpoints.css";
+
     .HEADER {
         height: var(--header-height);
         position: relative;
@@ -30,6 +32,8 @@
         width: 100%;
         right: 0;
         left: 0;
+        padding-top: var(--space-s);
+        padding-bottom: 1.5rem;
         height: var(--header-height);
         margin: auto;
         max-width: var(--page-maxWidth);
@@ -37,5 +41,11 @@
 
     .logo {
         height: var(--logo-height);
+    }
+
+    @media (--vw-m) {
+        .box {
+            align-items: center;
+        }
     }
 </style>

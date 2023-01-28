@@ -1,16 +1,19 @@
 <script>
     export let data = {};
+    const navigation = data?.navigation || {};
+    const [_, ...main] = navigation?.main || [];
 </script>
 
 <footer class="FOOTER box">
     <nav class="footerNav">
-        <a class="navItem" href="">Blog</a>
-        <span class="divider" />
-        <a class="navItem" href="">Argumente</a>
-        <span class="divider" />
-        <a class="navItem" href="">Über uns</a>
-        <span class="divider" />
-        <a class="navItem" href="">Kontakt</a>
+        {#each main as item, i}
+            {#if item?.pageTitle && item?.slug}
+                <a class="navItem" href={item.slug}>{item.pageTitle}</a>
+                {#if i < main.length - 1}
+                    <span class="divider" />
+                {/if}
+            {/if}
+        {/each}
     </nav>
 
     <div class="details">

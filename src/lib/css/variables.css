@@ -62,7 +62,7 @@
 
     --footer-height: 120px;
 
-    --header-height: 160px;
+    --header-height: 150px;
 
     --titleImage-height: 400px;
 
@@ -74,18 +74,18 @@
 
 @media (--vw-m) {
     :root {
-        --header-height: 90px;
+        --header-height: 120px;
     }
 }
 /*  ELEMENTS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 :root {
-    --logo-height: 98px;
+    --logo-height: 110px;
 }
 
 @media (--vw-m) {
     :root {
-        --logo-height: 60px;
+        --logo-height: 90px;
     }
 }
 

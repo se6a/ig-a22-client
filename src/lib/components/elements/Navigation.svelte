@@ -47,7 +47,7 @@
         display: flex;
         text-transform: uppercase;
         margin-left: auto;
-        font-size: min(var(--fontSize-m), 1.8vw);
+        font-size: min(var(--font-size-s), 1.8vw);
     }
 
     /*
