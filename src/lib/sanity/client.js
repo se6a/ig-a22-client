@@ -1,9 +1,10 @@
 import sanityClient from "@sanity/client";
+import {PUBLIC_DATASET} from "$env/static/public";
 import {mainNavigation, site, post, page} from "./queries";
 
 export const sanity = sanityClient({
     projectId: "w2pmk8ct",
-    dataset: "development",
+    dataset: PUBLIC_DATASET,
     apiVersion: "2021-10-21",
     useCdn: true
 });
