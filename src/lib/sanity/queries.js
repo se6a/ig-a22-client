@@ -139,6 +139,7 @@ export const post = `
 export const page = `
 * [_type == "pages" && slug.current == $route][0] {
     ${crntLang("pageTitle")},
+    pageDescription,
     "slug": slug.current,
     sections[] {${sections}}
 }

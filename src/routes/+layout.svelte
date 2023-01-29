@@ -6,6 +6,7 @@
     import "$lib/css/style.css";
     import "$lib/css/flags.css";
 
+    import {pageData} from "$lib/store";
     import Header from "$components/layout/Header.svelte";
     import Footer from "$components/layout/Footer.svelte";
     import Main from "$components/layout/Main.svelte";
@@ -14,8 +15,8 @@
 </script>
 
 <svelte:head>
-    <title>IG A22</title>
-    <meta name="description" content="" />
+    <title>{$pageData.pageTitle || "IG A22"}</title>
+    <meta name="description" content={$pageData || ""} />
 </svelte:head>
 
 <div class="layout _site">
