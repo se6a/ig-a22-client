@@ -7,18 +7,25 @@
 
 <div class="SECTION-POSTS section">
     {#each posts as post}
-        <a href="/post/{post.slug}">
-            <article class="postPreview box">
-                <div class="image">
-                    <Image image={post.titleImage} objectFit="cover" />
-                </div>
+        <article class="postPreview">
+            <a href="/post/{post.slug}">
+                <header class="head">
+                    <p class="posted">
+                        {new Date(post.createdAt).toLocaleDateString()}
+                    </p>
+                    <h2>{post.title}</h2>
+                </header>
+                <div class="content">
+                    <div class="image">
+                        <Image image={post.titleImage} objectFit="cover" />
+                    </div>
 
-                <div class="box">
-                    <h1>{post.title}</h1>
-                    {post?.description}
+                    <div class="text">
+                        {post?.description}
+                    </div>
                 </div>
-            </article>
-        </a>
+            </a>
+        </article>
     {/each}
 </div>
 
@@ -28,13 +35,24 @@
         flex-direction: column;
     }
 
-    .postPreview {
-        border: 1px solid gainsboro;
+    .postPreview > a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content {
+        margin-top: var(--space-m);
         display: flex;
     }
 
     .image {
         width: 20vmin;
         height: 20vmin;
+        flex-shrink: 0;
+        margin-right: var(--space-m);
+    }
+
+    .postPreview + .postPreview {
+        margin-top: var(--space-l);
     }
 </style>
