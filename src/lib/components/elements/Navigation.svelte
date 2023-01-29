@@ -2,6 +2,7 @@
     import Item from "$components/elements/NavigationItem.svelte";
     import IconMenu from "$components/icons/IconMenu.svelte";
     import {writable} from "svelte/store";
+    import {setContext} from "svelte";
 
     export let navigation = {};
 
@@ -18,6 +19,8 @@
     });
 
     const showMobile = writable(false);
+
+    setContext("showMobile", showMobile);
 </script>
 
 <nav class="NAVIGATION">
@@ -34,7 +37,7 @@
 
     <ul class="items">
         {#each main as item}
-            <Item {item} {showMobile} subItems={subOrdered?.[item?.slug] || []} />
+            <Item {item} subItems={subOrdered?.[item?.slug] || []} />
         {/each}
     </ul>
 </nav>
@@ -97,7 +100,7 @@
             justify-content: center;
             padding-bottom: 40%;
             position: fixed;
-            top: calc(var(--header-height) - var(--space-m));
+            top: var(--header-height);
             left: 0;
             right: 0;
             bottom: 0;

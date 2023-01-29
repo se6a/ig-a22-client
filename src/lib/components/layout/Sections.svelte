@@ -7,6 +7,8 @@
     import SectionCta from "$components/sections/SectionCta.svelte";
     import SectionSpace from "$components/sections/SectionSpace.svelte";
     import SectionPdfList from "$components/sections/SectionPdfList.svelte";
+    import SectionPosts from "$components/sections/SectionPosts.svelte";
+    import SectionFormSupport from "$components/sections/SectionFormSupport.svelte";
 
     import {capitalize} from "$lib/functions/utility.ts";
 
@@ -20,7 +22,9 @@
         SectionYoutube,
         SectionCta,
         SectionSpace,
-        SectionPdfList
+        SectionPdfList,
+        SectionPosts,
+        SectionFormSupport
     };
 </script>
 

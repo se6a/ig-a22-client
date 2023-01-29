@@ -1,10 +1,11 @@
 <script>
     import {createId} from "$lib/functions/utility.ts";
+    import {getContext} from "svelte";
 
     export let item = {};
     export let subItems = [];
 
-    export let showMobile = writable(false);
+    export let showMobile = getContext("showMobile");
 
     const inputId = createId();
     const pageTitle = item?.pageTitle || "";
@@ -13,21 +14,21 @@
 
 {#if pageTitle}
     <li class="NAV-ITEM" class:hasSubItems={subItems.length} class:isCurrent={false}>
-        <a class="link forItem" on:click={() => ($showMobile = false)} href={route}>
+        <a class="link forItem" on:click={() => ($showMobile = false)} href="/{route}">
             {pageTitle}
         </a>
 
-        <input
-            class="toggle forSubItems ifMobile"
-            type="checkbox"
-            name="mobileItemToggle"
-            id={inputId}
-        />
-        <label class="label forSubItems ifMobile" for={inputId}>
-            {pageTitle}
-        </label>
-
         {#if subItems.length}
+            <input
+                class="toggle forSubItems ifMobile"
+                type="checkbox"
+                name="mobileItemToggle"
+                id={inputId}
+            />
+            <label class="button forSubItems ifMobile" for={inputId}>
+                <div class="iconArrow">←</div>
+            </label>
+
             <div class="subItemGroup useColorPreset-1" style:--subItems={subItems.length}>
                 <ul>
                     {#each subItems as subItem}
@@ -35,7 +36,7 @@
                             <li class="subItem">
                                 <a
                                     class="link"
-                                    on:click={() => (showMobile = false)}
+                                    on:click={() => ($showMobile = false)}
                                     href="/{subItem.slug}">{subItem.pageTitle}</a
                                 >
                             </li>
@@ -187,28 +188,36 @@
             color: var(--color-front-isCurrent);
         }
 
-        .hasSubItems .link.forItem,
         .toggle.forSubItems,
-        .label.forSubItems {
+        .button.forSubItems {
             display: none;
         }
 
-        .hasSubItems .toggle.forSubItems,
-        .hasSubItems .label.forSubItems {
-            display: block;
-        }
-
         .link.forItem,
-        .label.forSubItems {
+        .button.forSubItems {
             font-size: var(--fontSize-l);
         }
 
-        .hasSubItems .label.forSubItems::after {
-            content: "←";
-            display: inline-block;
-            transition: transform var(--duration-middle);
+        .button.forSubItems {
             position: absolute;
-            margin-left: 1em;
+            top: 1.2em;
+            height: 1em;
+            width: 1em;
+            right: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button.forSubItems .iconArrow {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 0.2em;
+            transform: rotate(-90deg);
+            transition: transform var(--duration-fast);
         }
 
         .subItemGroup {
@@ -231,11 +240,11 @@
         /* INTERACTIVITY
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-        .toggle.forSubItems:checked ~ .label::after {
-            transform: rotate(-90deg);
+        .toggle.forSubItems:checked ~ .button .iconArrow {
+            transform: rotate(0deg);
         }
 
-        .toggle.forSubItems:checked ~ .label ~ .subItemGroup {
+        .toggle.forSubItems:checked ~ .button ~ .subItemGroup {
             height: var(--subItemGroup-height);
         }
 

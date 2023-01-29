@@ -1,7 +1,6 @@
-import {fetchSite} from "$lib/sanity/client";
+import {fetchPage} from "$lib/sanity/client";
 
-export async function load({params}) {
-    const route = params?.route || "";
-    const data = await fetchSite(route || "");
-    return data;
+export async function load() {
+    const data = await fetchPage("ig-a22");
+    return {pageData: data};
 }

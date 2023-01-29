@@ -23,6 +23,7 @@
         position: relative;
         z-index: 100;
         --bg: white;
+        background-color: red;
     }
 
     .box {

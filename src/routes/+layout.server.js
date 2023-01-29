@@ -1,7 +1,6 @@
 import {fetchSite} from "$lib/sanity/client";
 
-export async function load({params}) {
-    const route = params?.route || "ig-a22";
-    const data = await fetchSite(route || "");
+export async function load() {
+    const data = await fetchSite();
     return data;
 }

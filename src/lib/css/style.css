@@ -64,3 +64,55 @@ h3 {
     text-decoration: underline;
     color: var(--green);
 }
+
+/*  SPACE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.space-1 {
+    height: var(--space-1);
+    width: var(--space-1);
+}
+
+.space-2 {
+    height: var(--space-2);
+    width: var(--space-2);
+}
+
+.space-3 {
+    height: var(--space-3);
+    width: var(--space-3);
+}
+
+.space-4 {
+    height: var(--space-4);
+    width: var(--space-4);
+}
+
+.space-5 {
+    height: var(--space-5);
+    width: var(--space-5);
+}
+
+.space-6 {
+    height: var(--space-6);
+    width: var(--space-6);
+}
+
+.space-s {
+    height: var(--space-s);
+    width: var(--space-s);
+}
+
+.space-m {
+    height: var(--space-m);
+    width: var(--space-m);
+}
+
+.space-l {
+    height: var(--space-l);
+    width: var(--space-l);
+}
+
+.space-xl {
+    height: var(--space-xl);
+    width: var(--space-xl);
+}

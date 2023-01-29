@@ -81,6 +81,14 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 :root {
     --logo-height: 110px;
+
+    --button-height: 5rem;
+    --button-padding-x: 1.8rem;
+
+    --field-height: 5rem;
+    --field-padding-x: 1.8rem;
+
+    --checkbox-size: 3rem;
 }
 
 @media (--vw-m) {

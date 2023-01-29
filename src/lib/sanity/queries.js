@@ -2,7 +2,9 @@ function crntLang(prop, rename = "") {
     return `"${rename || prop}": ${prop}[$lang]`;
 }
 
-export const image = `
+/* PARTS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+const image = `
     ...asset->{
         "src": url,
         "width": metadata.dimensions.width,
@@ -14,7 +16,7 @@ export const image = `
     hotspot
 `;
 
-export const pdf = `
+const pdf = `
     ...asset->{
         url,
         originalFilename
@@ -22,26 +24,26 @@ export const pdf = `
     title
 `;
 
-export const sectionGallery = `
+const sectionGallery = `
     _type == "sectionGallery" => {
         type,
         images[] {${image}}
     }
 `;
 
-export const sectionImage = `
+const sectionImage = `
     _type == "sectionImage" => {
         "image": image {${image}},
     }
 `;
 
-export const sectionTitleImage = `
+const sectionTitleImage = `
     _type == "sectionTitleImage" => {
         "image": image {${image}}
     }
 `;
 
-export const sectionCta = `
+const sectionCta = `
     _type == "sectionCta" => {
         "cta": {
             label,
@@ -50,7 +52,7 @@ export const sectionCta = `
     }
 `;
 
-export const sectionRichtext = `
+const sectionRichtext = `
     _type == "sectionRichtext" => {
         "blocks": textEditor[$lang][] {
             ...,
@@ -59,23 +61,52 @@ export const sectionRichtext = `
     }
 `;
 
-export const sectionYoutube = `
+const sectionYoutube = `
     _type == "sectionYoutube" => {
         "url": videoUrl
     }
 `;
 
-export const sectionSpace = `
+const sectionSpace = `
     _type == "sectionSpace" => {
         size
     }
 `;
 
-export const sectionPdfList = `
+const sectionPdfList = `
     _type=="sectionPdfList" => {
         list[] {${pdf}}
     }
 `;
+
+const sectionPosts = `
+    _type == "sectionPosts" => {
+        "posts": * [_type == "posts"] {
+            title,
+            description,
+            "slug": slug.current,
+            "createdAt": _createdAt,
+            "updatedAt": _updatedAt,
+            titleImage {${image}},
+        }
+    }
+`;
+
+const sections = `
+    _type,
+    ${sectionRichtext},
+    ${sectionImage},
+    ${sectionTitleImage},
+    ${sectionGallery},
+    ${sectionYoutube},
+    ${sectionCta},
+    ${sectionSpace},
+    ${sectionPdfList},
+    ${sectionPosts}
+`;
+
+/* QUERIES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 export const mainNavigation = `
 * [_type == "settings"][0].navigationMain[]->{
@@ -92,44 +123,44 @@ export const subNavigation = `
 }
 `;
 
-export const page = `
-    ${crntLang("pageTitle")},
+export const post = `
+* [_type == "posts" && slug.current == $postSlug][0] {
+    title,
+    description,
     "slug": slug.current,
-    sections[] {
-        _type,
-        ${sectionRichtext},
-        ${sectionImage},
-        ${sectionTitleImage},
-        ${sectionGallery},
-        ${sectionYoutube},
-        ${sectionCta},
-        ${sectionSpace},
-        ${sectionPdfList}
-    }
+    "createdAt": _createdAt,
+    "updatedAt": _updatedAt,
+    titleImage {${image}},
+    sections[] {${sections}}
+}
 `;
 
-// Get page defined as $route or - if not defined - startpage
+export const page = `
+* [_type == "pages" && slug.current == $route][0] {
+    ${crntLang("pageTitle")},
+    "slug": slug.current,
+    sections[] {${sections}}
+}
+`;
+
 export const site = `
 {
     "navigation": {
         "main": ${mainNavigation},
         "sub": ${subNavigation}
-    },
-
-    "pageData": * [_type == "pages" && slug.current == $route || _type == "settings" ][0] {
-        _type == "pages" => {
-            ${page}
-        },
-        _type == "settings" => {
-            ...navigationMain[0]-> {
-                ${page}
-            }
-        }
-    },
-
-    "subPages": * [_type == "pages" && isSubpage == true && parentPage->slug.current == $route] {
-        "slug": slug.current,
-        ${crntLang("pageTitle")},
     }
 }
 `;
+
+// "subPages": * [_type == "pages" && isSubpage == true && parentPage->slug.current == $route] {
+//     "slug": slug.current,
+//     ${crntLang("pageTitle")},
+// }
+
+// _type == "settings" => {
+//     ...navigationMain[0]-> {
+//         ${crntLang("pageTitle")},
+//         "slug": slug.current,
+//         sections[] {${sections}}
+//     }
+// }
