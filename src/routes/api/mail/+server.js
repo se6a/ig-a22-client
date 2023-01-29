@@ -46,7 +46,7 @@ async function confirm({firstname, lastname, email}) {
 Guten Tag ${firstname} ${lastname},
 
 Vielen Danke für Ihre Bereitschaft und in dieser Sache zu Unterstützen!
-Wir werden uns bals bei Ihnen melden.
+Wir werden uns bald bei Ihnen melden.
 
 Mit Freundlichen Grüssen
 
