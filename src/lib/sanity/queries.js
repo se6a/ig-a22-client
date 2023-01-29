@@ -81,7 +81,7 @@ const sectionPdfList = `
 
 const sectionPosts = `
     _type == "sectionPosts" => {
-        "posts": * [_type == "posts"] {
+        "posts": * [_type == "posts"] | order(_createdAt desc) {
             title,
             description,
             "slug": slug.current,
@@ -151,16 +151,3 @@ export const site = `
     }
 }
 `;
-
-// "subPages": * [_type == "pages" && isSubpage == true && parentPage->slug.current == $route] {
-//     "slug": slug.current,
-//     ${crntLang("pageTitle")},
-// }
-
-// _type == "settings" => {
-//     ...navigationMain[0]-> {
-//         ${crntLang("pageTitle")},
-//         "slug": slug.current,
-//         sections[] {${sections}}
-//     }
-// }
