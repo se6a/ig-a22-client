@@ -9,9 +9,15 @@ const config: UserConfig = {
             $css: path.resolve("./src/lib/css")
         }
     },
+
+    build: {
+        target: "es2015"
+    },
+
     server: {
         port: 3000
     },
+
     plugins: [sveltekit()]
 };
 
