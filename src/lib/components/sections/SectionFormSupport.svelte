@@ -13,6 +13,7 @@
     let doShowError = false;
     let doShowSuccess = false;
     let doAlertMissingFields = false;
+    let isSending = false;
 
     $: canSubmit = $firstname && $lastname && $street && $location && $email;
 
@@ -26,6 +27,7 @@
             return;
         }
 
+        isSending = true;
         const fd = new FormData();
         fd.append("firstname", $firstname);
         fd.append("lastname", $lastname);
@@ -40,12 +42,28 @@
             body: fd
         });
 
-        if (res.ok) doShowSuccess = true;
-        else doShowError = true;
+        if (res.ok) {
+            doShowSuccess = true;
+            $firstname = "";
+            $lastname = "";
+            $street = "";
+            $location = "";
+            $role = "";
+            $email = "";
+            $phone = "";
+        } else doShowError = true;
+
+        isSending = false;
     }
 </script>
 
 <form class="SECTION-FORM-SUPPORT section" class:canSubmit class:doAlertMissingFields>
+    {#if isSending}
+        <div class="box overlay isSending">
+            <p>Senden...</p>
+        </div>
+    {/if}
+
     {#if doShowSuccess}
         <div
             class="box overlay successMessage"
@@ -171,6 +189,10 @@
 
     .button.forTryAgain {
         text-decoration: underline;
+    }
+
+    .isSending {
+        z-index: var(--zPos-front);
     }
 
     @media (--vw-m) {
