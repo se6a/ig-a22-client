@@ -18,7 +18,9 @@
 
     $: if (canSubmit) doAlertMissingFields = false;
 
-    async function trySubmit() {
+    async function trySubmit(e) {
+        e.preventDefault();
+
         if (!canSubmit) {
             doAlertMissingFields = true;
             return;
@@ -57,7 +59,7 @@
         <div class="box overlay errorMessage">
             <p>Etwas ging schief.</p>
 
-            <button class="button forTryAgain" on:click={() => (doShowError = false)}
+            <button class="button forTryAgain" on:click={(e) => (doShowError = false)}
                 >Versuchen sie es nochmal</button
             >
             oder schreiben sie uns.
