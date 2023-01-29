@@ -4,6 +4,7 @@ function crntLang(prop, rename = "") {
 
 /* PARTS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 const image = `
     ...asset->{
         "src": url,
