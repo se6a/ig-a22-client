@@ -13,5 +13,6 @@
     .PDF-BLOCK {
         display: block;
         margin-top: 0 !important;
+        line-break: anywhere;
     }
 </style>

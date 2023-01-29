@@ -18,4 +18,7 @@
 </div>
 
 <style>
+    a {
+        line-break: anywhere;
+    }
 </style>
