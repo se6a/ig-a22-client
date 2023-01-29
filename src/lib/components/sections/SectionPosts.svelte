@@ -30,6 +30,8 @@
 </div>
 
 <style>
+    @import "$lib/css/breakpoints.css";
+
     .SECTION-POSTS {
         display: flex;
         flex-direction: column;
@@ -54,5 +56,23 @@
 
     .postPreview + .postPreview {
         margin-top: var(--space-l);
+    }
+
+    @media (--vw-m) {
+        .postPreview + .postPreview {
+            margin-top: var(--space-l);
+            padding-top: var(--space-l);
+            border-top: 1px solid gray;
+        }
+
+        .content {
+            flex-direction: column;
+        }
+
+        .image {
+            margin-bottom: var(--space-m);
+            height: 40vmin;
+            width: 100%;
+        }
     }
 </style>
