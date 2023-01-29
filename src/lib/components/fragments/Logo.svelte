@@ -1,13 +1,10 @@
 <svg
     class="LOGO"
-    width="100%"
-    height="100%"
     viewBox="0 0 460 500"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     preserveAspectRatio="xMidYMid meet"
-    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
 >
     <path
         d="M37.231,235.226l-7.673,-20.676l-0.241,0l-7.673,20.676l15.587,0Zm4.281,11.631l-24.148,-0l-3.634,9.852l-13.73,0l22.209,-56.533l14.457,-0l22.21,56.533l-13.731,0l-3.633,-9.852Z"
@@ -99,7 +96,13 @@
     />
 </svg>
 
-<!-- <style>
+<style>
     .LOGO {
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        stroke-linejoin: round;
+        stroke-miterlimit: 2;
+        height: 100%;
+        width: auto;
     }
-</style> -->
+</style>
