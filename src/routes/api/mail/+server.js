@@ -1,11 +1,11 @@
+import nodemailer from "nodemailer";
+import {error} from "@sveltejs/kit";
 import {
     SECRET_MAIL_PORT,
     SECRET_MAIL_HOST,
     SECRET_MAIL_USER,
     SECRET_MAIL_PW
 } from "$env/static/private";
-import nodemailer from "nodemailer";
-import {error} from "@sveltejs/kit";
 
 const transporter = nodemailer.createTransport({
     port: SECRET_MAIL_PORT,
@@ -25,7 +25,7 @@ export async function POST({request}) {
         formData.forEach((value, key) => (data[key] = value));
 
         const {response} = await forward(data);
-        confirm(data);
+        await confirm(data);
 
         if (!response.startsWith("2")) throw error(400, "Server Error");
 

@@ -77,10 +77,11 @@
         <div class="box overlay errorMessage">
             <p>Etwas ging schief.</p>
 
-            <button class="button forTryAgain" on:click={(e) => (doShowError = false)}
+            <button class="textLink forTryAgain" on:click={() => (doShowError = false)}
                 >Versuchen sie es nochmal</button
             >
-            oder schreiben sie uns.
+            oder
+            <a class="textLink" href="mailto:info@ig-a22.ch">schreiben Sie uns.</a>
         </div>
     {/if}
 
