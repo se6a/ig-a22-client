@@ -17,14 +17,19 @@
 </a>
 
 <style>
+    @import "$lib/css/breakpoints.css";
+
     .BLOCK-CTA {
         color: white;
         font-size: var(--font-size-l);
         text-transform: uppercase;
         font-weight: 600;
         width: 100%;
+        max-width: 100%;
         display: flex;
         justify-content: center;
+        transform: scale(1);
+        transition: transform var(--duration-middle);
     }
 
     .circle {
@@ -51,5 +56,16 @@
     .pushHeight {
         grid-area: a;
         margin-top: 100%;
+    }
+
+    .BLOCK-CTA:hover {
+        transform: scale(1.05);
+    }
+
+    @media (--vw-s) {
+        .BLOCK-CTA {
+            font-size: var(--font-size-m);
+            max-width: 100%;
+        }
     }
 </style>

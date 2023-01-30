@@ -41,14 +41,14 @@ async function confirm({firstname, lastname, email}) {
         to: email,
         subject: "IG A22: Bestätigung",
         text: `
-Guten Tag ${firstname} ${lastname},
+Guten Tag ${firstname} ${lastname}
 
-Vielen Dank für Ihre Bereitschaft uns in dieser Sache zu Unterstützen!
+Vielen Dank für Ihre Bereitschaft, uns in dieser Sache zu unterstützen.
 Wir werden uns bald bei Ihnen melden.
 
-Mit Freundlichen Grüssen
+Mit freundlichen Grüssen
 
-Interessengemeinschaft A22
+Interessengemeinschaft «A22 UNTER DEN BODEN»
 `
     });
 }

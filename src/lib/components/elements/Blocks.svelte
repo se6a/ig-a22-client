@@ -32,7 +32,9 @@
         margin-top: var(--space-4);
     }
 
-    .BLOCKS > :global(h1 + h2) {
+    .BLOCKS > :global(h1 + h1),
+    .BLOCKS > :global(h1 + h2),
+    .BLOCKS > :global(h2 + h2) {
         margin-top: 0;
     }
 

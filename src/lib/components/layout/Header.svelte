@@ -26,6 +26,7 @@
     }
 
     .box {
+        box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.15);
         position: fixed;
         display: flex;
         align-items: flex-end;
