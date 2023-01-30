@@ -8,8 +8,6 @@
 
     export let showMobile = getContext("showMobile");
 
-    $: console.log("nav", $pageData.slug);
-
     const inputId = createId();
     const pageTitle = item?.pageTitle || "";
     const route = item?.slug || "";

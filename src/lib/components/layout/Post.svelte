@@ -4,8 +4,6 @@
 
     const pageData = data?.pageData || {};
     const sections = pageData?.sections || [];
-    console.log();
-    console.log("POST", pageData);
 </script>
 
 <article class="POST">

@@ -29,8 +29,6 @@ export async function POST({request}) {
 
         if (!response.startsWith("2")) throw error(400, "Server Error");
 
-        console.log(response);
-
         return new Response();
     } catch (err) {
         throw error(400, "Server Error");
