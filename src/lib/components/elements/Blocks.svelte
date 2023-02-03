@@ -2,6 +2,7 @@
     import {PortableText} from "@portabletext/svelte";
     import cta from "$components/elements/BlockCta.svelte";
     import pdf from "$components/elements/BlockPdfLink.svelte";
+    import small from "$components/elements/BlockStyle-Small.svelte";
 
     export let blocks = [];
 
@@ -9,6 +10,9 @@
         types: {
             cta,
             pdf
+        },
+        block: {
+            small
         }
     };
 </script>

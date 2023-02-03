@@ -2,14 +2,18 @@
     export let image = {};
     export let objectPosition = "50% 50%";
     export let objectFit = "contain";
+    export let sizes = [400, 600, 800, 1400, 2000, 3000];
 
     const src = image?.src || "";
     const alt = image?.alt || "";
     const caption = image?.caption || "";
+
+    const srcset = sizes.map((size) => `${src}?w=${size} ${size}w`).join(",");
 </script>
 
 <figure class="IMAGE">
     <picture>
+        <source {srcset} />
         <img style:--objectPosition={objectPosition} style:--objectFit={objectFit} {src} {alt} />
     </picture>
 
