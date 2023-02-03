@@ -12,8 +12,6 @@
     import Main from "$components/layout/Main.svelte";
 
     export let data = {};
-
-    $: console.log("D", $pageData);
 </script>
 
 <svelte:head>
