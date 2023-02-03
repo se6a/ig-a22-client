@@ -9,11 +9,11 @@
 <article class="POST">
     <header class="head section">
         <p class="posted">
-            {new Date(pageData.createdAt).toLocaleDateString()}
+            {pageData?.createdAt ? new Date(pageData.createdAt).toLocaleDateString() : ""}
         </p>
 
         <h1>
-            {pageData.title}
+            {pageData?.title || ""}
         </h1>
     </header>
     <Sections {sections} />
