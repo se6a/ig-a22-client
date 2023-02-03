@@ -12,10 +12,12 @@
     import Main from "$components/layout/Main.svelte";
 
     export let data = {};
+
+    $: console.log("D", $pageData);
 </script>
 
 <svelte:head>
-    <title>{$pageData.pageTitle || "IG A22"}</title>
+    <title>{$pageData?.pageMetaTitle || $pageData?.pageTitle || "IG A22"}</title>
     <meta name="description" content={$pageData || ""} />
 </svelte:head>
 
