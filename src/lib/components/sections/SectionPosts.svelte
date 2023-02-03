@@ -13,7 +13,7 @@
                     <p class="posted">
                         {new Date(post.createdAt).toLocaleDateString()}
                     </p>
-                    <h2>{post.title}</h2>
+                    <h2>{post?.title || ""}</h2>
                 </header>
                 <div class="content">
                     <div class="image">
@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="text">
-                        {post?.description}
+                        {post?.description || ""}
                     </div>
                 </div>
             </a>

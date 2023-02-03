@@ -26,6 +26,8 @@
         SectionPosts,
         SectionFormSupport
     };
+
+    console.log("sections", sections);
 </script>
 
 <div class="SECTIONS">
