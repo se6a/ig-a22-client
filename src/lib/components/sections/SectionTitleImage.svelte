@@ -7,7 +7,7 @@
 </script>
 
 <div class="TITLE-IMAGE section isFullwidth">
-    <Image {image} objectFit="cover" objectPosition="50% 65%" />
+    <Image {image} objectFit="cover" objectPosition="50% 65%" allowFullscreen={false} />
 </div>
 
 <style>

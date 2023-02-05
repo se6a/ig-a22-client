@@ -4,6 +4,7 @@
     export let objectFit = "contain";
     import IconClose from "$lib/components/icons/IconClose.svelte";
     export let sizes = [400, 600, 800, 1400, 2000, 3000];
+    export let allowFullscreen = true;
 
     const src = image?.src || "";
     const alt = image?.alt || "";
@@ -12,13 +13,26 @@
     const srcset = sizes.map((size) => `${src}?w=${size} ${size}w`).join(",");
 
     let showFullscreen = false;
+
+    function toggleFullscreen() {}
+
+    function maybeEvents(N) {
+        if (!allowFullscreen) return;
+
+        N.addEventListener("click", toggleFullscreen);
+        N.addEventListener("keyup", toggleFullscreen);
+
+        return {
+            destroy: () => {
+                N.removeEventListener("click", toggleFullscreen);
+                N.removeEventListener("keyup", toggleFullscreen);
+            }
+        };
+    }
 </script>
 
-<figure class="IMAGE">
-    <picture
-        on:click={() => (showFullscreen = !showFullscreen)}
-        on:keyup={() => (showFullscreen = !showFullscreen)}
-    >
+<figure class="IMAGE" class:allowFullscreen>
+    <picture use:maybeEvents>
         <source {srcset} />
         <img style:--objectPosition={objectPosition} style:--objectFit={objectFit} {src} {alt} />
     </picture>
@@ -75,6 +89,9 @@
         max-height: 70vh;
         object-position: var(--objectPosition);
         object-fit: var(--objectFit);
+    }
+
+    .allowFullscreen img {
         cursor: pointer;
     }
 

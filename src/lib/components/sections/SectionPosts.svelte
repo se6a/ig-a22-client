@@ -23,7 +23,7 @@
                 </header>
                 <div class="content">
                     <div class="image">
-                        <Image image={post.titleImage} objectFit="cover" />
+                        <Image image={post.titleImage} objectFit="cover" allowFullscreen={false} />
                     </div>
 
                     <div class="text">
