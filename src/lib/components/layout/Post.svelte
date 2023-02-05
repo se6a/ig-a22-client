@@ -4,12 +4,18 @@
 
     const pageData = data?.pageData || {};
     const sections = pageData?.sections || [];
+
+    const date = pageData?.useDate
+        ? new Date(pageData.useDate).toLocaleDateString()
+        : pageData?.createdAt
+        ? new Date(pageData.createdAt).toLocaleDateString()
+        : "";
 </script>
 
 <article class="POST">
     <header class="head section">
         <p class="posted">
-            {pageData?.createdAt ? new Date(pageData.createdAt).toLocaleDateString() : ""}
+            {date}
         </p>
 
         <h1>

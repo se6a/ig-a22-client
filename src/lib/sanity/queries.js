@@ -85,6 +85,7 @@ const sectionPosts = `
         "posts": * [_type == "posts"] | order(_createdAt desc) {
             title,
             description,
+            useDate,
             "slug": slug.current,
             "createdAt": _createdAt,
             "updatedAt": _updatedAt,
@@ -128,6 +129,7 @@ export const post = `
 * [_type == "posts" && slug.current == $postSlug][0] {
     title,
     description,
+    useDate,
     "slug": slug.current,
     "createdAt": _createdAt,
     "updatedAt": _updatedAt,

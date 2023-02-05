@@ -3,15 +3,21 @@
 
     export let section = {};
     const posts = section?.posts || [];
+    console.log(posts);
 </script>
 
 <div class="SECTION-POSTS section">
     {#each posts as post}
+        {@const date = post?.useDate
+            ? new Date(post.useDate).toLocaleDateString()
+            : post?.createdAt
+            ? new Date(post.createdAt).toLocaleDateString()
+            : ""}
         <article class="postPreview">
             <a href="/post/{post.slug}">
                 <header class="head">
                     <p class="posted">
-                        {new Date(post.createdAt).toLocaleDateString()}
+                        {date}
                     </p>
                     <h2>{post?.title || ""}</h2>
                 </header>
