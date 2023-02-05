@@ -20,6 +20,8 @@
 </div>
 
 <style>
+    @import "$lib/css/breakpoints.css";
+
     .SECTION-GALLERY-GRID {
         --widthHeightRatio: 0.75;
     }
@@ -29,7 +31,9 @@
 
     .images {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: 1fr;
+        justify-content: center;
         gap: var(--space-m);
     }
 
@@ -47,5 +51,11 @@
         right: 0;
         bottom: 0;
         left: 0;
+    }
+
+    @media (--vw-m) {
+        .images {
+            gap: 2vw;
+        }
     }
 </style>
