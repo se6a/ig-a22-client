@@ -14,7 +14,9 @@
 
     let showFullscreen = false;
 
-    function toggleFullscreen() {}
+    function toggleFullscreen() {
+        showFullscreen = !showFullscreen;
+    }
 
     function maybeEvents(N) {
         if (!allowFullscreen) return;
