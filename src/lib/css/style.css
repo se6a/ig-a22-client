@@ -11,6 +11,12 @@
     letter-spacing: 0.03em;
 }
 
+@media (--vw-s) {
+    :root {
+        font-size: 13px;
+    }
+}
+
 body {
     font-size: var(--font-size-m);
 }

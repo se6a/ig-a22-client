@@ -52,6 +52,17 @@
     --font-size-xxl: 10rem;
 }
 
+@media (--vw-s) {
+    :root {
+        --font-size-xs: 1rem;
+        --font-size-s: 1.2rem;
+        --font-size-m: 1.5rem;
+        --font-size-l: 2.5rem;
+        --font-size-xl: 3rem;
+        --font-size-xxl: 4rem;
+    }
+}
+
 /*  PAGE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
