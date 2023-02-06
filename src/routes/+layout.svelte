@@ -32,6 +32,15 @@
 </div>
 
 <style>
+    :global(html) {
+        border: 3px solid red;
+    }
+
+    :global(body) {
+        /* overflow-x: hidden; */
+        border: 2px solid blue;
+    }
+
     .layout._site {
         min-height: 100%;
         display: flex;
@@ -45,6 +54,6 @@
     }
 
     .layout._footer {
-        height: 100px;
+        margin-top: auto;
     }
 </style>
