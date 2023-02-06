@@ -34,7 +34,6 @@
 <style>
     .layout._site {
         overflow-x: hidden;
-        border: 1px solid red;
         min-height: 100%;
         display: flex;
         flex-direction: column;
