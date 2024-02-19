@@ -17,7 +17,7 @@
     let doAlertMissingFields = false;
     let isSending = false;
 
-    $: canSubmit = $firstname && $lastname && $street && $location && $email;
+    $: canSubmit = $membershipType && $firstname && $lastname && $street && $location && $email;
 
     $: if (canSubmit) doAlertMissingFields = false;
 
