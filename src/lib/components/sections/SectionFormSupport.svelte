@@ -1,7 +1,9 @@
 <script>
     import {writable} from "svelte/store";
     import Field from "$lib/components/fragments/Field.svelte";
+    import CheckboxGroup from "../fragments/CheckboxGroup.svelte";
 
+    const membershipType = writable("");
     const firstname = writable("");
     const lastname = writable("");
     const street = writable("");
@@ -29,6 +31,7 @@
 
         isSending = true;
         const fd = new FormData();
+        fd.append("membershipType", $membershipType);
         fd.append("firstname", $firstname);
         fd.append("lastname", $lastname);
         fd.append("street", $street);
@@ -44,6 +47,7 @@
 
         if (res.ok) {
             doShowSuccess = true;
+            $membershipType = "";
             $firstname = "";
             $lastname = "";
             $street = "";
@@ -87,6 +91,7 @@
 
     <div class="box">
         <div class="fields">
+            <CheckboxGroup value={membershipType} />
             <Field type="text" value={lastname} name="lastname" label="Nachname" />
             <Field type="text" value={firstname} name="firstname" label="Vorname" />
             <Field type="text" value={role} name="role" label="Funktion" />

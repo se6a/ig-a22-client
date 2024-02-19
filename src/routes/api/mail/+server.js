@@ -54,6 +54,7 @@ Interessengemeinschaft «A22 UNTER DEN BODEN»
 }
 
 async function forward({
+    membershipType = "-",
     firstname = "-",
     lastname = "-",
     role = "-",
@@ -63,13 +64,14 @@ async function forward({
     phone = "-"
 }) {
     const dataString = `
-Vorname:    ${firstname}
-Nachname:   ${lastname}
-Funktion:   ${role}
-Strasse:    ${street}
-Ort:        ${location}
-Telefon:    ${phone}
-E-Mail:     ${email}
+Mitgliedschaft: ${membershipType}
+Vorname:        ${firstname}
+Nachname:       ${lastname}
+Funktion:       ${role}
+Strasse:        ${street}
+Ort:            ${location}
+Telefon:        ${phone}
+E-Mail:         ${email}
   `;
     return await transporter.sendMail({
         from: "unterstuetzen@ig-a22.ch",
