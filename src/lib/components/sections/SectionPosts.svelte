@@ -3,7 +3,6 @@
 
     export let section = {};
     const posts = section?.posts || [];
-    console.log(posts);
 </script>
 
 <div class="SECTION-POSTS section">
